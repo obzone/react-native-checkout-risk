@@ -20,3 +20,11 @@ const CheckoutRisk = NativeModules.CheckoutRisk
 export function multiply(a: number, b: number): Promise<number> {
   return CheckoutRisk.multiply(a, b);
 }
+
+export async function initialize(publicKey: string, environment: string) {
+  return CheckoutRisk.initialize(publicKey, environment);
+}
+
+export async function publishData() {
+  return CheckoutRisk.publishData();
+}
