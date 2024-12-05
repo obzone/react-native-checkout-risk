@@ -5,6 +5,8 @@ buildscript {
   repositories {
     google()
     mavenCentral()
+    maven { url 'https://jitpack.io' }
+    maven { url = uri("https://maven.fpregistry.io/releases") }
   }
 
   dependencies {
@@ -64,6 +66,8 @@ android {
 repositories {
   mavenCentral()
   google()
+  maven { url 'https://jitpack.io' }
+  maven { url = uri("https://maven.fpregistry.io/releases") }
 }
 
 def kotlin_version = getExtOrDefault("kotlinVersion")
@@ -74,6 +78,7 @@ dependencies {
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  implementation 'com.github.checkout:checkout-risk-sdk-android:+'
 }
 
 if (isNewArchitectureEnabled()) {
